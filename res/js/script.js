@@ -5,7 +5,7 @@ const cube = document.getElementById("cube");
 const counter = document.getElementById("counter");
 
 let gameInterval; // Můžu na tuto proměnnou poukazovat
-
+// -
 // Stisknutí tlačítka start: 
 startGame.onclick = () => {
     setNumber(cube, 0)
