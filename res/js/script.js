@@ -3,12 +3,16 @@ const startGame = document.getElementById("startGame");
 const stopGame = document.getElementById("stopGame");
 const cube = document.getElementById("cube");
 const counter = document.getElementById("counter");
+const audio = new Audio();
 
 let gameInterval; // Můžu na tuto proměnnou poukazovat
 let scoreIncrease = 0;
-// Stisknutí tlačítka start: 
+// Stisknutí tlačítka start:
+
 startGame.onclick = () => {
-    setNumber(cube, 0)
+    audio.src = "./res/audio/backgroundAudio.mp3";
+    audio.play();
+    setNumber(cube, 0);
     moveElement(cube, 500, 500);
     startGameInterval(cube);
     setCookieClicker(cube);
@@ -21,6 +25,7 @@ startGame.onclick = () => {
 
 // Stisknutí tlačítka stop: 
 stopGame.onclick = () => {
+    audio.stop();
     clearInterval(gameInterval);
     startGame.style.display = "inline";
     startGame.style.justifyContent = "center";
