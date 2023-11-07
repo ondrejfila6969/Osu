@@ -5,7 +5,7 @@ const cube = document.getElementById("cube");
 const counter = document.getElementById("counter");
 
 let gameInterval; // Můžu na tuto proměnnou poukazovat
-// -
+let scoreIncrease = 0;
 // Stisknutí tlačítka start: 
 startGame.onclick = () => {
     setNumber(cube, 0)
@@ -42,6 +42,9 @@ let timeStart = 0; // Počáteční čas
 
 const setCookieClicker = (element) => {
     element.onclick = () => {
+        scoreIncrease++;
+        counter.innerText = "Score: " + scoreIncrease;
+        
         element.innerText++;
         moveElement(cube, getRandomNumber(200, window.innerWidth - parseInt(element.style.width)), getRandomNumber(200, window.innerHeight - parseInt(element.style.height))); // Aby cube nelezla, kam nemá xd
         let customSize = getRandomNumber(80, 100);
