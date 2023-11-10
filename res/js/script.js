@@ -25,8 +25,8 @@ startGame.onclick = () => {
 
 // Stisknutí tlačítka stop: 
 stopGame.onclick = () => {
-    audio.stop();
     clearInterval(gameInterval);
+    audio.pause();
     startGame.style.display = "inline";
     startGame.style.justifyContent = "center";
     startGame.style.textAlign = "center";
